@@ -37,48 +37,20 @@ fi
 [[ "$(uname -s)" == "Darwin" ]] && echo "macOS" || echo "Windows/Linux"
 ```
 
-The first check determines your path through the wizard. The second detects their operating system (record it silently for the Board Brief; you do not need to confirm it with the person). Run both before your first message. Do not tell the person you are running checks.
+The first check determines your path. The second detects their operating system (record it in the Board Brief; no need to mention it). Run both before your first message.
 
-**If the first check returned `MEMORY_KIT_FOUND`:** the person already completed a Memory Kit. Their name appears after "Working with" in the heading you found (e.g., "## Working with Evan" means their name is Evan). Read the full `~/.claude/CLAUDE.md` to understand their role and how they work. Use this name throughout the wizard. Do not ask for their name. Follow the **Post-Memory-Kit path** below.
+**If `MEMORY_KIT_FOUND`:** Read `~/.claude/CLAUDE.md` for their name (after "Working with") and their role. Use their name throughout. Do not ask for it.
 
-**If the first check returned `STANDALONE`:** follow the **Standalone path** below.
+**If `STANDALONE`:** Ask for their name before anything else.
 
----
+**Both paths:** Greet them warmly and frame what you are building together. Hit these beats in your own words:
 
-### Post-Memory-Kit path (bridged)
+- You are building a Board Brief: a plan for a live data dashboard they can check every morning
+- It captures what data matters, what metrics to track, how the board looks and behaves
+- It takes about 20 to 30 minutes
+- The Board Brief becomes the spec that Claude uses to design and build the real dashboard
 
-Open with a bridge that uses their name and frames what you are building:
-
-> [Name], let's build your Board Brief, the plan for a live data dashboard you can check every morning to know exactly how your business is doing.
->
-> Here's what we'll create together:
-> - A clear picture of what data matters most to you
-> - The metrics that tell you if today was good or bad
-> - A layout that puts the important stuff where your eyes go first
-> - A spec detailed enough that Claude can design and build the dashboard from it
->
-> The whole thing takes about 20 to 30 minutes. We'll work through it one piece at a time. Ready to start?
-
-### Standalone path (full greeting)
-
-Open warmly and in plain language. Ask for their name:
-
-> Hi! I'm your Board Brief setup partner. Today we're going to plan a live data dashboard for your business, one screen that replaces all those tabs you check every morning.
->
-> Before we get started, what's your name?
-
-Once they answer:
-
-> Great to meet you, [name]. Here's what we'll build together:
->
-> - A clear picture of what data matters most to you
-> - The metrics that tell you if today was good or bad
-> - A layout that puts the important stuff where your eyes go first
-> - A spec detailed enough that Claude can design and build the dashboard from it
->
-> Takes about 20 to 30 minutes. Ready?
-
-Do not continue until they say go.
+Keep it short. Ask if they are ready to start. Do not continue until they say go.
 
 ---
 
@@ -111,9 +83,8 @@ This shapes the entire design. A phone dashboard looks nothing like a wall TV da
 > 1. **Who sees it?** Just you? Your team? Clients or outsiders?
 > 2. **What device will you mostly view it on?** Laptop, phone, or a big monitor/TV on the wall?
 > 3. **How long do people look at it?** A 5-second glance, a couple of minutes, or do they dig in and explore?
-> 4. **How fresh does the data need to be?** Live (real-time), every hour, or once a day is fine?
 
-Wait for their answers. These determine screen layout, data density, and refresh strategy.
+Wait for their answers. These determine screen layout and data density.
 
 Reflect back what their answers mean for the design (one sentence):
 
@@ -137,8 +108,6 @@ Map out where the data lives.
 > - **The source** (e.g., Google Analytics, Zoho CRM, Stripe, QuickBooks, Search Console)
 > - **What you want from it** (e.g., website visitors, deals in pipeline, revenue)
 > - **How often it should refresh** (real-time, hourly, daily)
->
-> Don't worry about API details yet. Just name the platforms and what you want from each.
 
 Wait for their answer.
 
@@ -148,88 +117,61 @@ If they list many sources, help them prioritize:
 
 Record all sources, but note which ones are priority for the first build.
 
-After they list their sources:
+After they answer, ask about sample data:
 
-> Pro tip: if you have a sample of the real data for any of these (a CSV row, a screenshot, a copy-pasted record), mention it now or share it. Real sample data makes the first version look like the real thing right away.
+> Do you have any sample data from any of these? A screenshot, a CSV row, a copy-pasted record, anything. It's optional, but if you have it, it helps the first version look like the real thing right away.
 
-If they share sample data, note it in the Board Brief alongside the relevant source.
+If they share sample data, note it in the Board Brief alongside the relevant source. If not, move on.
 
 ## Step 5: The numbers that matter
 
-This is the heaviest step. Take your time. Help them think clearly.
+This is the heaviest step and the one where you earn your coaching role. Your job is to connect the dots between their data sources (Step 4), their one number (Step 2), and what you know about their role. Propose how the pieces fit together and let them react. Coach, not order-take.
 
-> Now the important part. What numbers go on the board?
+### Connect the dots first
+
+Look at what you know: their one number, their data sources, and (if the Memory Kit is present) their role and business. Use that context to propose how the data sources connect to tell a story about their business. Present 3 to 5 starter metrics and show how they relate to each other and to the one number.
+
+> Here's how I see your data connecting. Your one number is [X], and your data lives in [sources].
 >
-> The sweet spot is 3 to 6 key metrics. More than that and the board gets noisy. Less than that and you're missing something.
+> [Propose 3-5 metrics that logically flow from their sources and role. Show the relationship between them. For example: "Website traffic (GA4) feeds leads (Zoho), leads feed pipeline value (Zoho), pipeline feeds revenue (QuickBooks). Your one number sits at the end of that chain, and these are the levers that move it."]
 >
-> For each metric, I need to know:
->
-> 1. **Name**: what do you call this number?
-> 2. **Source**: which platform does it come from?
-> 3. **Format**: is it money ($), a count, a percentage (%), a rating, or time?
-> 4. **Target**: what's "good"?
-> 5. **Direction**: is up good or bad? (Revenue up = good. Churn up = bad.)
-> 6. **Compare to**: what do you measure it against? Last week? Last month? A fixed target?
-> 7. **Alert when**: when should the board sound the alarm? (Behind pace with less than a week left, drops below X, etc.)
->
-> Let's do them one at a time. What's the first metric?
+> Does this match how you think about your business? What would you add, change, or cut?
 
-Walk through each metric conversationally. After they describe one, reflect it back in the structured format and confirm before moving to the next.
+Adapt your suggestions to what you know. A marketing person with GA4 and Search Console gets traffic, rankings, conversions. A sales person with Zoho and QuickBooks gets pipeline, close rate, revenue. A coach with Stripe and a calendar gets bookings, revenue per client, client count. An operator with multiple platforms gets the cross-functional metrics that show whether the business is healthy.
 
-**"I don't know" coaching for the detail fields.** Students often know WHAT they want to track but freeze on the specifics. When someone stalls on a field, use these warm-ups:
+If someone describes a metric that is clearly a composite of two or three underlying drivers, ask whether they want the composite on the board, the individual drivers, or both. Some people want "total revenue" as the hero and its components below it. Others skip the composite and watch the levers directly. Both are valid.
 
-**Target ("What's good?"):**
+The sweet spot is 3 to 6 metrics. Past 7, push back gently. Metrics that get cut can become detail-view items in Step 6.
 
-> Not sure what good looks like? That's common. What was this number last month? We can use that as a starting point and adjust once you've watched it for a week.
+### Deepen each confirmed metric
 
-**Compare to:**
+Once they have confirmed their metrics (modified your suggestions, added their own, or accepted as-is), walk through each one to fill in the details. Do this conversationally, one metric at a time. Reflect each one back in structured form and confirm before moving to the next.
 
-> Most people compare to last month or to a fixed target. Which feels more natural for how you think about this number?
+For each metric, draw out:
 
-**Alert when:**
+- **Format**: Is it money ($), a count, a percentage (%), a rating, or time?
+- **Target**: What does "good" look like? (If they stall: "What was this number last month? We can start there and adjust once you've watched it for a week.")
+- **Direction**: Does up mean good news or bad news? (If they stall: "If this number goes up, do you smile or frown?")
+- **Compare to**: Do you measure this against last week, last month, or a fixed target? (Default suggestion: "Most people compare to last month. Does that work for you?")
+- **Alert threshold**: When would you stop what you're doing to investigate this number? (If they stall: "We can skip the alert for now and add it once you've watched the board for a week.")
 
-> Think about when you'd stop what you're doing to investigate. That's your alert line. If you can't picture that moment, we can skip the alert for this metric and add it later once you've seen the board in action.
+It is fine to record "TBD" for any field. A partially filled metric is better than a stalled conversation. The Board Brief can be updated anytime.
 
-**Direction:**
+### Apply the Action Test
 
-> If this number goes up, do you smile or frown? That's all this one means.
+After all metrics are detailed, run the Action Test on each:
 
-It is fine to record "TBD" for a field and move on. A partially filled metric is better than a stalled conversation. The person can update the Board Brief anytime.
+> Quick gut check on each one. If [metric name] changed 20% tomorrow, what specifically would you do?
 
-**After each metric, apply the Action Test:**
+If they name a specific action ("I'd call the sales team," "I'd check the ad spend," "I'd pause that campaign"), it passes. Move on.
 
-> Quick gut check on [metric name]: if this number changed 20% tomorrow, what specifically would you do?
+If the answer is vague or "nothing":
 
-If they give a specific action ("I'd call the sales team," "I'd check the ad spend," "I'd pull that campaign"), the metric passes. Move on.
+> That's a signal. If a 20% move doesn't change what you do, this metric might be interesting but not dashboard-worthy. Want to drop it, or is there a version that WOULD trigger action?
 
-If the answer is vague or "I don't know" or "nothing," surface it honestly:
+Help them refine or cut. The Action Test is the quality gate.
 
-> That's a signal. If a 20% move doesn't trigger a specific action, this metric might be interesting but not dashboard-worthy. Would you rather drop it, or is there a version of this number that WOULD trigger action?
-
-Help them refine or drop it. Do not force a metric through. The Action Test keeps the board sharp.
-
-**If they have more than 7 metrics after the Action Test:**
-
-> You've got [N] metrics. For a dashboard you check daily, 5 to 7 is the sweet spot. Past that, the important stuff competes with the noise and engagement drops.
->
-> Looking at what you've listed, which ones passed the Action Test the strongest? Let's keep those on the main board and decide if the rest belong in a detail view you can drill into.
-
-Help them trim. The cut metrics can become detail-view items in Step 6.
-
-**If they are stuck or have fewer than 3 metrics:**
-
-Help them decompose from their one number (Step 2):
-
-> Let's work backward from your one number: [their answer from Step 2]. What has to happen for that number to go up? And what feeds into those things?
-
-Walk through the decomposition together. For example, if their one number is revenue:
-- "What drives revenue for you? New customers, bigger orders, repeat purchases?"
-- "OK, new customers. How would you know if new customers are on track? What number would tell you?"
-- "And bigger orders, how would you see that? Average order value?"
-
-This naturally produces 3 to 5 metrics. Guide them through it, but let them name the metrics. Their words, not yours.
-
-**Proactive coaching during this step:** if someone describes a metric that is clearly a composite of two or three underlying drivers, ask whether the composite or the drivers would be more actionable. Do not insist either way. Some people want "total revenue" as the hero and its components below it. Others want to skip the composite and watch the levers directly. Both are valid.
+**If more than 7 survive the Action Test**, help them trim. The cut metrics become detail-view items in Step 6.
 
 Record each confirmed metric in the structured format.
 
@@ -329,7 +271,6 @@ Use this exact structure:
 - **Who sees it:** [from Step 3]
 - **Primary device:** [from Step 3]
 - **Attention span:** [from Step 3]
-- **Data freshness:** [from Step 3]
 
 ## Data Sources
 
