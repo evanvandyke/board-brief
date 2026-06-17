@@ -176,6 +176,26 @@ This is the heaviest step. Take your time. Help them think clearly.
 
 Walk through each metric conversationally. After they describe one, reflect it back in the structured format and confirm before moving to the next.
 
+**"I don't know" coaching for the detail fields.** Students often know WHAT they want to track but freeze on the specifics. When someone stalls on a field, use these warm-ups:
+
+**Target ("What's good?"):**
+
+> Not sure what good looks like? That's common. What was this number last month? We can use that as a starting point and adjust once you've watched it for a week.
+
+**Compare to:**
+
+> Most people compare to last month or to a fixed target. Which feels more natural for how you think about this number?
+
+**Alert when:**
+
+> Think about when you'd stop what you're doing to investigate. That's your alert line. If you can't picture that moment, we can skip the alert for this metric and add it later once you've seen the board in action.
+
+**Direction:**
+
+> If this number goes up, do you smile or frown? That's all this one means.
+
+It is fine to record "TBD" for a field and move on. A partially filled metric is better than a stalled conversation. The person can update the Board Brief anytime.
+
 **After each metric, apply the Action Test:**
 
 > Quick gut check on [metric name]: if this number changed 20% tomorrow, what specifically would you do?
@@ -413,6 +433,8 @@ Save the updated file.
 > 1. This Board Brief goes into Claude Design, which generates a visual prototype of your dashboard
 > 2. Then both the brief and the design go into Claude Code, which builds the real working version
 > 3. You test it, give feedback, and iterate until it's right
+>
+> The Board Brief is the real deliverable. Even if the dashboard build isn't finished today, you have everything Claude needs to pick it up anytime. Share the brief, describe what you want, and Claude builds from it. No coach required for that part.
 >
 > You planned a custom dashboard by having a conversation. The brief does the rest.
 
