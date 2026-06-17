@@ -64,7 +64,13 @@ This step captures the board's identity in three quick answers. Keep it snappy.
 > 2. **"I open this to find out..."** Finish that sentence. One line.
 > 3. **If you could only see ONE number on this board, what would it be?** The single number that tells you if today was good or bad.
 
-Wait for all three answers. If they struggle with the one number, coach them:
+Wait for all three answers.
+
+If their "I open this to find out..." answer is vague ("if things are going well," "how my business is doing"), sharpen it:
+
+> Can you make that more specific? "Going well" could mean a hundred things. Are you checking on revenue? Whether work is shipping on time? Client retention? Give me the specific question this board answers.
+
+If they struggle with the one number, coach them:
 
 > Think about it this way: you step away from work for a week. You come back and open this dashboard for 5 seconds. What is the one number that tells you if things are fine or if something needs attention?
 
@@ -117,6 +123,12 @@ If they list many sources, help them prioritize:
 
 Record all sources, but note which ones are priority for the first build.
 
+**Cross-check their one number.** Look at the one number from Step 2 and the sources they just listed. If the one number doesn't trace back to any listed source (e.g., they said "revenue" but listed no accounting or invoicing tool), flag it:
+
+> Your one number is [X], but none of these sources track that. Where does that data actually live?
+
+Record whatever they add. This is often their most important data source and the one they forget because it's not where they spend their day.
+
 After they answer, ask about sample data:
 
 > Do you have any sample data from any of these? A screenshot, a CSV row, a copy-pasted record, anything. It's optional, but if you have it, it helps the first version look like the real thing right away.
@@ -126,6 +138,10 @@ If they share sample data, note it in the Board Brief alongside the relevant sou
 ## Step 5: The numbers that matter
 
 This is the heaviest step and the one where you earn your coaching role. Your job is to connect the dots between their data sources (Step 4), their one number (Step 2), and what you know about their role. Propose how the pieces fit together and let them react. Coach, not order-take.
+
+**This dashboard is about THEIR business, not their clients' businesses.** If they work with clients (consultants, agencies, freelancers, coaches), they will naturally list metrics they deliver for clients: open rates, ROAS, website traffic, campaign performance. Those belong on client reports, not here. This board answers one question: is YOUR business healthy? Revenue, client retention, workload capacity, cash flow. Frame this early and clearly:
+
+> Today we're building YOUR control room. If you work with clients, you probably track open rates, ad performance, website traffic for them. That's great, and you can use these same principles to build dashboards for your clients later. But this board is about YOU: is your business making money, are you keeping clients, and are you keeping up with the work?
 
 ### Connect the dots first
 
