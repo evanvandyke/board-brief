@@ -41,7 +41,7 @@ The first check determines your path. The second detects their operating system 
 
 **If `MEMORY_KIT_FOUND`:** Read `~/.claude/CLAUDE.md` for their name (after "Working with") and their role. Use their name throughout. Do not ask for it.
 
-**If `STANDALONE`:** Ask for their name before anything else.
+**If `STANDALONE`:** Ask for their name and what their business does before anything else.
 
 **Both paths:** Greet them warmly and frame what you are building together. Hit these beats in your own words:
 
@@ -145,7 +145,7 @@ The sweet spot is 3 to 6 metrics. Past 7, push back gently. Metrics that get cut
 
 ### Deepen each confirmed metric
 
-Once they have confirmed their metrics (modified your suggestions, added their own, or accepted as-is), walk through each one to fill in the details. Do this conversationally, one metric at a time. Reflect each one back in structured form and confirm before moving to the next.
+Once they have confirmed their metrics (modified your suggestions, added their own, or accepted as-is), walk through each one to fill in the details. For fields where the answer is obvious from context (a revenue metric is money, up is good), propose a default and let them confirm quickly. Only slow down for fields that need real judgment, like targets and alert thresholds. Batch the easy calls so this step stays under 10 minutes.
 
 For each metric, draw out:
 
@@ -228,7 +228,7 @@ Quick checklist of interactive features.
 >
 > 1. **Switch date ranges** (today, this week, this month, custom)
 > 2. **Filter the view** (by person, product, region, channel)
-> 3. **Alerts when a number crosses a line** (tile turns red, a banner appears)
+> 3. **Alerts when a number crosses a line** (the thresholds you set earlier become visible warnings on the dashboard)
 > 4. **Click a tile to see more detail** (drill into the breakdown behind a number)
 > 5. **Auto-refresh on its own** (so it can live on a screen all day, untouched)
 >
@@ -256,12 +256,18 @@ Wait for confirmation. If they want to change one, record the change.
 
 ### Write the Board Brief
 
-Now compile everything into a single markdown file. Save it in the project root directory as `board-brief.md`.
+Now compile everything into a single markdown file. Save it in the project root directory as `board-brief.md`. After saving, tell the person the exact file path so they can find it.
 
 Use this exact structure:
 
 ```
 # Board Brief: [Board Name]
+**Created:** [today's date]
+
+## Owner
+- **Name:** [from Step 1]
+- **Role:** [from Memory Kit or conversation]
+- **Company:** [from Memory Kit, website, or conversation]
 
 ## The Pitch
 **I open this to find out:** [one sentence from Step 2]
@@ -371,11 +377,9 @@ Save the updated file.
 > **`board-brief.md`** in your project folder. It captures every metric, the layout, the look, and the behavior for your dashboard.
 >
 > **What happens next:**
-> 1. This Board Brief goes into Claude Design, which generates a visual prototype of your dashboard
-> 2. Then both the brief and the design go into Claude Code, which builds the real working version
-> 3. You test it, give feedback, and iterate until it's right
+> This Board Brief is the spec. Hand it to Claude (or any builder) and it has everything it needs to design and build your dashboard. You can start that process right now, or come back to it later. The brief holds all the decisions you just made.
 >
-> The Board Brief is the real deliverable. Even if the dashboard build isn't finished today, you have everything Claude needs to pick it up anytime. Share the brief, describe what you want, and Claude builds from it. No coach required for that part.
+> Even if the dashboard build isn't finished today, you have everything you need to pick it up anytime. Share the brief, describe what you want, and Claude builds from it.
 >
 > You planned a custom dashboard by having a conversation. The brief does the rest.
 
